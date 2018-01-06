@@ -1,0 +1,37 @@
+.header{
+    text-align: center;
+    padding-top: 20px;
+}
+
+.form-body{
+    /*background-color: #E1F5FE;*/
+    background-image:
+    radial-gradient(
+      circle at top right,
+      #81D4FA,
+      #E1F5FE
+    );
+}
+
+form{
+    padding:20px;
+}
+
+#textBox{
+    border-radius: 40px 40px 40px 40px;
+    background: #FFFFFF;
+    /*padding: 20px; */
+    width: 250px;
+    /*height: 150px;*/
+}
+
+label{
+    font-size: 50px;
+}
+
+button{
+    background-color:rgb(2, 119, 189);
+    width: 200px;
+    border-radius: 12px;
+    margin-left: 200px;
+}

@@ -1,0 +1,188 @@
+ <div class="wrapper">
+    <div class="sidebar" data-color="blue" data-image="../assets/img/sidebar-1.jpg">
+        <div class="logo">
+			<a href="">
+                <img src="app/public/images/pg-logo.png" alt="Logo"/>
+			</a>
+        </div>
+        <div class="sidewrapper" >
+            <inner-menu></inner-menu>
+        </div>
+		<toaster-container [toasterconfig]="toasterconfig">
+        </toaster-container>
+    </div>
+    <div class="main-panel" >
+		<nav class="navbar navbar-transparent navbar-absolute">
+			<div class="container-fluid">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle" data-toggle="collapse">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+				    <a class="navbar-brand" href="#">Dashboard</a>
+				</div>
+				<div class="collapse navbar-collapse">
+					<ul class="nav navbar-nav navbar-right">
+						<li>
+                            <div class="dropdown">
+                                <i class="material-icons dropbtn">add_circle</i>
+                                <div class="dropdown-content" style="cursor:pointer">
+                                    <li><a routerLink="/home/company/add">Add New Drive</a></li>
+                                    <li data-toggle="modal" data-target="#myModali"><a>Invite Student(s)</a></li>
+                                </div>
+                            </div>
+                        </li>
+						<li>
+                            <div class="dropdown">
+                                <i class="material-icons dropbtn">notifications</i>
+                                <div class="dropdown-content" style="right:0">
+                                    <li><a>0 Notifications</a></li>
+                                </div>
+                            </div>
+						</li>
+						<li>
+                            <div class="dropdown">
+                                <i class="material-icons dropbtn">person</i>
+                                <div class="dropdown-content"  style="right:-5px">
+                                    <li (click)="logout()"><a>Logout</a></li>
+                                </div>
+                            </div>
+						</li>
+					</ul>
+
+					<!--<form class="navbar-form navbar-right" role="search">
+						<div class="form-group  is-empty">
+							<input type="text" class="form-control" placeholder="Search">
+							<span class="material-input"></span>
+						</div>
+						<button type="submit" class="btn btn-white btn-round btn-just-icon">
+							<i class="material-icons">search</i><div class="ripple-container"></div>
+						</button>
+					</form>-->
+				</div>
+			</div>
+		</nav>
+        <div class="content inner-outlet">
+            <router-outlet></router-outlet>           
+        </div>
+    </div>
+
+    <!-- Trigger the modal with a button -->
+    <div id="myModali" class="modal fade" role="dialog" data-backdrop="false">
+  		<div class="modal-dialog">
+			<!-- Modal content-->
+      		<div class="modal-content">
+        		<div class="modal-header" background-color="blue">
+          									
+					<h4 class="modal-title">Add Student(s)</h4>
+				
+                </div>
+                <form name = test>
+					<div class="modal-body">
+
+						<ul class="tab">
+							<li><a href="javascript:void(0)" class="tablinks" (click)="openTab(event, 'Single')">Single Student</a></li>
+							<li><a href="javascript:void(0)" class="tablinks" (click)="openTab(event, 'Multiple')">Upload a File</a></li>
+						</ul>
+
+						<div id="Single" class="tabcontent">
+							<div class="form-group label-floating">
+							
+								<label class="control-label">Student's USN</label>
+									<input type="text" class="form-control"
+										name= "usn" [(ngModel)]="usn" id="usn" >
+												
+							</div>
+							<div class="form-group label-floating">
+												
+								<label class="control-label">Email ID</label>
+								<input type="email" class="form-control"
+									name= "email" [(ngModel)]="email" id="email" >
+													
+							</div>
+
+							<div class ="col-md-3">
+								<button type="button" class="btn btn-info invite-btn" (click)="inviteStudents()">Invite</button>
+							</div>
+							<div class ="col-md-9">
+								<button type="button" class="btn btn-info invite-btn" data-dismiss="modal">Close</button>
+							</div>
+						</div>
+
+						<div id="Multiple" class="tabcontent">
+							<input type="file" name="fileInput" value="filInput" id="fileInput"
+								(change)="changeListener($event)">
+
+							<pre id="fileDisplayArea"></pre>
+
+							<div class ="col-md-3">
+								<button type="button" class="btn btn-info invite-btn" (click)="uploadStudents()">Upload</button>
+							</div>
+							<div class ="col-md-9">
+								<button type="button" class="btn btn-info invite-btn" data-dismiss="modal">Close</button>
+							</div>
+						</div>
+					<!--<div class="row">	
+
+						<div class="col-sm-4">			-->
+                        <!--<input type="radio" name="chooseone" value="single"
+							(click)="disable('single')"><label for="single">Single Entry</label><br>-->
+						
+                        <!--<div class="form-group label-floating">
+						
+                        	<label class="control-label">Student's USN</label>
+								<input type="text" class="form-control"
+									name= "usn" [(ngModel)]="usn" id="usn" >
+											
+                        </div>
+						<div class="form-group label-floating">
+											
+                            <label class="control-label">Email ID</label>
+          					<input type="email" class="form-control"
+								name= "email" [(ngModel)]="email" id="email" >
+												 
+                        </div>
+						</div>
+						<hr>-->
+
+						<!--<div class="col-sm-8">					-->
+                        <!--<input type="radio" name="chooseone" value="multiple"
+							(click)="disable('multiple')"><label for="multiple">Multiple Entry</label><br>-->
+											
+                        <!--<input type="file" name="fileInput" value="filInput" id="fileInput"
+							(change)="changeListener($event)">
+
+							<pre id="fileDisplayArea"></pre>-->
+							<!--<div class="form-group">
+							<label for="single">single</label>
+							<input type="file" class="form-control" name="single" ng2FileSelect [uploader]="uploader" />                                  
+							</div>
+
+							<button type="button" class="btn btn-success btn-s"
+							(click)="uploader.uploadAll()">
+								<span class="glyphicon glyphicon-upload"></span> Upload all
+							</button><br />-->
+
+						<!--</div>-->
+
+        			
+                    <!--</div>-->
+					</div>
+				</form>
+				<div class="row">
+					<div class="modal-footer">
+						<!--<div class ="col-md-3">
+							<button type="button" class="btn btn-info invite-btn" (click)="inviteStudents()">Invite</button>
+						</div>
+						<div class ="col-md-9">
+        					<button type="button" class="btn btn-info invite-btn" data-dismiss="modal">Close</button>
+						</div>-->
+        			</div>
+				</div>
+			</div>
+		</div>
+	</div> 
+
+</div>

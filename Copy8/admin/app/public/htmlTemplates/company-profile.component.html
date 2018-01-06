@@ -1,0 +1,262 @@
+<div class="container-fluid">
+	<div class="row">
+	    <div class="col-md-8">
+	        <div class="card">
+	            <div class="card-header" data-background-color="blue">
+	                <h4 class="title">Add Company Profile</h4>
+					<p class="category">Fill all data</p>
+                </div>
+                <div class="card-content">
+                    <form #f="ngForm" (ngSubmit)="onSubmitTemplateBased()">								
+	                    <div class="row">
+	                        <div class="col-md-5">
+								<div class="form-group label-floating">
+									
+                                    <label class="control-label">Company Name</label>
+									<input type="text" class="form-control"
+										[(ngModel)]="comp.name" name = "name" required>
+											
+                                </div>
+	                        </div>
+                        </div>
+                        <div class="row">
+	                        <div class="col-md-6">
+								<div class="form-group label-floating">
+									
+                                    <label class="control-label">Company Location</label>
+									<input type="text" class="form-control"
+										[(ngModel)]="comp.location" name = "location">
+											
+                                </div>
+	                        </div>
+                        </div>
+                        <div class="row">
+	                        <div class="col-md-3">
+								<div class="form-group label-floating">
+												
+                                    <label class="control-label">Cut Off(10th)</label>
+									<input type="text" class="form-control"
+										[(ngModel)]="comp.cutOffS" name = "cutOffS" list="tenth" required>
+									<datalist id="tenth">
+										<option>No Cut Off</option>
+										<option>60%</option>
+										<option>65%</option>
+										<option>70%</option>
+										<option>75%</option>
+										<option>80%</option>
+										<option>85%</option>
+									</datalist>
+											
+                                </div>
+							</div>
+						    <div class="col-md-3">
+								<div class="form-group label-floating">
+											
+									<label class="control-label">Cut Off(12th)</label>
+									<input type="text" class="form-control"
+										[(ngModel)]="comp.cutOffP" name = "cutOffP" list="twelveth" required >
+									<datalist id="twelveth">
+										<option>No Cut Off</option>
+										<option>60%</option>
+										<option>65%</option>
+										<option>70%</option>
+										<option>75%</option>
+										<option>80%</option>
+										<option>85%</option>	
+									</datalist>
+											
+                                </div>
+							</div>
+							<div class="col-md-3">
+								<div class="form-group label-floating">											
+												
+                                    <label class="control-label">Cut Off(degree)</label>
+									<input type="text" class="form-control"
+										[(ngModel)]="comp.cutOffD" name = "cutOffD" list="college" required>
+									<datalist id="college">
+										<option>No Cut Off</option>
+										<option>60%</option>
+										<option>65%</option>
+										<option>70%</option>
+									</datalist>
+
+								</div>
+                            </div>
+							<div class="col-md-3">
+								<div class="form-group label-floating">											
+												
+                                    <label class="control-label">Cut Off(PG-Optional)</label>
+									<input type="text" class="form-control"
+										[(ngModel)]="comp.cutOffPg" name = "cutOffPg" list="pg">
+									<datalist id="pg">
+										<option>No Cut Off</option>
+										<option>60%</option>
+										<option>65%</option>
+										<option>70%</option>
+									</datalist>
+
+								</div>
+                            </div>
+						</div>
+						<div class="row">
+							<div class="col-md-12">
+								<div class="form-group label-floating">
+									
+									<!--<rl-tag-input [(ngModel)]="tags" placeholder="Testing placeholder"></rl-tag-input>-->
+                                    <label class="control-label">Eligible Branches</label>
+									
+									<div class="multiselect">
+										<div class="selectbox" (click)="showCheckBox()">
+											<select>
+												<option>Select eligible branch</option>
+											</select>
+											<div class="overSelect"></div>
+										</div>
+										<div id="checkBoxes">
+											<label for="one"><input type="checkbox" id="all" [(ngModel)]="comp.selected" name="selected"/>Any Branch</label>
+											<label for="two"><input type="checkbox" id="all" [(ngModel)]="comp.selecte" name="selecte"/>Computer Science</label>
+											<label for="three"><input type="checkbox" id="all"/>Information Science</label>
+											<label for="four"><input type="checkbox" id="all"/>Mechanical</label>
+											<label for="five"><input type="checkbox" id="all"/>Electrical</label>
+											<label for="six"><input type="checkbox" id="all"/>Electronics And Communication</label>
+											<label for="seven"><input type="checkbox" id="all"/>Civil</label>
+											<label for="eight"><input type="checkbox" id="all"/>Bio Technology</label>
+											<label for="nine"><input type="checkbox" id="all"/>Tele Communication</label>
+											<label for="ten"><input type="checkbox" id="all"/>Architecture</label>
+										</div>
+									</div>
+
+									
+									<!--<input type="text" class="form-control" 
+										[(ngModel)]="comp.branch" name = "branch" list="branch" >
+									<datalist id="branch" multiple>
+										<option>All/Any</option>
+										<option>Computer Science</option>
+										<option>Information Science</option>
+										<option>Mechanical</option>
+										<option>Electrical</option>
+										<option>Electronics And Communication</option>
+										<option>Civil</option>
+										<option>Bio Technology</option>
+										<option>Tele Communication</option>
+										<option>Architecture</option>
+									</datalist>-->
+
+                                </div>
+	                        </div>
+                        </div>
+						
+	                    <div class="row">
+							<div class="col-md-2">
+								<div class="form-group label-floating" id="fields">
+                                            
+                                <label class="control-label">No. Of rounds:</label>
+								<input type="text" class="form-control"
+									[(ngModel)]="comp.rounds" name = "roundDetails" #rounds>
+							</div>
+							</div>
+							<div class="col-md-10">
+                            <div class="form-group label-floating" id="fields">
+                                            
+                                <label class="control-label">Round Details</label>
+                                <input type="text" class="form-control"
+									[(ngModel)]="comp.roundDetails1" name = "roundDetails1"
+									 placeholder="Round 1">
+							</div>
+							<div *ngIf="rounds.value>=2" class="form-group">
+								<input type="text" class="form-control"
+									[(ngModel)]="comp.roundDetails2" name = "roundDetails2"
+									 placeholder="Round 2">
+							</div>
+							<div *ngIf="rounds.value>=3" class="form-group" id="fields">
+								<input type="text" class="form-control"
+									[(ngModel)]="comp.roundDetails3" name = "roundDetails3"
+									 placeholder="Round 3">
+							</div>
+							<div *ngIf="rounds.value>=4" class="form-group" id="fields">
+								<input type="text" class="form-control"
+									[(ngModel)]="comp.roundDetails4" name = "roundDetails4"
+									 placeholder="Round 4">
+							</div>
+							<div *ngIf="rounds.value>=5" class="form-group" id="fields">
+								<input type="text" class="form-control"
+									[(ngModel)]="comp.roundDetails5" name = "roundDetails5"
+									 placeholder="Round 5">
+							</div>
+							<div *ngIf="rounds.value>=6" class="form-group" id="fields">
+								<input type="text" class="form-control"
+									[(ngModel)]="comp.roundDetails6" name = "roundDetails6"
+									 placeholder="Round 6">
+		
+                                        
+                            </div>
+							</div>
+                        </div>
+                        <div class="row">
+							<div class="col-md-12">
+                            <div class="form-group label-floating">
+                                            
+                                <label class="control-label">Required Skills</label>
+                                <input type="text" class="form-control"
+									[(ngModel)]="comp.skills" name = "skills">
+                                        
+                            </div>
+							<div class="some">
+							<select data-placeholder="Choose a country..." style="width:350px;" multiple class="chosen-select">
+								<option value="1">1</option>
+								<option value="2">2</option>
+							</select>
+							</div>
+							</div>
+                        </div>
+						<div class="row">
+                            <div class="col-md-4">
+                                <div class="form-group label-floating">
+                                    <label class="control-label">Package</label>
+                                                
+                                    <input type="text" class="form-control"
+										[(ngModel)]="comp.package" name = "package" >
+                                            
+                                </div>
+                            </div>
+                        </div>
+	                    <div class="row">
+	                        <div class="col-md-5">
+								<div class="form-group label-floating">
+												
+                                    <label class="control-label">Date</label>
+									<input type="text" class="form-control" 
+										[(ngModel)]="comp.date" name = "date" >
+											
+                                </div>
+	                        </div>
+	                        <div class="col-md-4">
+							    <div class="form-group label-floating">
+												
+                                    <label class="control-label">Time</label>
+									<input type="text" class="form-control" 
+										[(ngModel)]="comp.time" name = "time" >
+											
+                                </div>
+	                        </div>
+	                    </div>
+	                    <div class="row">
+	                        <div class="col-md-12">
+								<div class="form-group label-floating">
+									
+                                    <label class="control-label">Venue</label>
+									<input type="text" class="form-control"
+										[(ngModel)]="comp.venue" name = "venue"  >
+								</div>
+	                        </div>
+	                    </div>
+                        <button type="submit" class="btn btn-info invite-btn pull-right"
+							(click)="addcompany">Add Company</button>
+                        
+                        <div class="clearfix"></div>
+	                </form>
+				</div>
+			</div>
+	    </div>
+	</div>	
+</div>

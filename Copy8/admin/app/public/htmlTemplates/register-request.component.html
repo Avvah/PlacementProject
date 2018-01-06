@@ -1,0 +1,83 @@
+<div class=main>     
+    <div class="row">   
+        <div class="col-sm-2"></div>
+        <div class="col-sm-7">
+    <div class="form-body" style="margin-left:120px">
+        <div class="header">
+        <header>
+            <h2>Request Form</h2>
+        </header>
+    </div>
+            <form #f="ngForm" (ngSubmit)="onRegister()">
+                <div class="row">
+                <div class="col-sm-6">
+                <div class="form-group">
+                <label class="control-label">First Name</label>
+                <input type="text" [(ngModel)]="register.name" name="name" class="form-control" id="textBox"
+                placeholder="First Name">
+                </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label class="control-label">Last Name</label>
+                        <input type="text" [(ngModel)]="register.name" name="name" class="form-control" id="textBox"
+                        placeholder="Last Name">
+                    </div>
+                </div>
+                
+                </div>
+
+                <div class="row">
+
+                <div class="col-sm-6">
+                <div class="form-group">
+                    <label class="control-label">Email Id:</label>
+                    <input type="text" [(ngModel)]="register.mail" name="mail" class="form-control" id="textBox"
+                    placeholder="Email Id">
+                </div>
+                </div>
+                <div class="col-sm-6">
+                <div class="form-group">
+                <label class="control-label">Contact Number:</label>
+                <input type="text" [(ngModel)]="register.contact" name="contact" class="form-control" id="textBox"
+                placeholder="Contact Number">
+                </div>
+                </div>
+                </div>
+                
+                <div class="row">
+                <div class="col-sm-4">
+                <div class="form-group">
+                <label class="control-label">City:</label>
+                <input type="text" [(ngModel)]="register.city" name="city" class="form-control" id="textBox"
+                placeholder="Institute City">
+                </div>
+                </div>
+                </div>
+                                        
+                <div class="row">
+                <div class="col-sm-4">
+                <div class="form-group">
+                <label class="control-label">Institution:</label>
+                <input type="text" [(ngModel)]="register.institution" name="institution" class="form-control" id="textBox"
+                placeholder="Institute name">
+                </div>
+                </div>
+                </div>
+                
+                <div class="row">
+                <div class="col-sm-4">
+                <div class="form-group">
+                <label class="control-label">Any Questions?</label>
+                <input type="text-area" [(ngModel)]="register.quest" name="quest" class="form-control" id="textBox"
+                placeholder="optional">
+                </div>
+                </div>
+                </div>
+                
+                <button class="btn waves-effect waves-light" type="submit" (click)="submit()">Send Request</button>
+            </form>
+    </div>
+    </div>
+    </div>
+</div>

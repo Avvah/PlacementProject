@@ -1,0 +1,35 @@
+<div class="container"> 
+    <div class="row">
+        <div class="col-sm-3"></div>
+        <div class="col-sm-4">
+            <div class="card">
+                <div class="card-header">
+                    Login 
+                </div>
+            <div class="card-content">
+                <form #f="ngForm" ngSubmit="onClickLogin()">
+                    <div class="input-field col s12">
+                        <div class="form-group">
+                            <div class="row">
+                                <input type=text name="userName" [(ngModel)]="user.userName" placeholder="Username" class="form-control" id="text_box">
+                            </div>
+                        </div>
+                    </div>             
+                    <div class="input-field col s12">
+                        <div class="form-group">
+                            <div class="row">
+                                <input type=password name="password" [(ngModel)]="user.password" placeholder="Password" class="form-control" id="text_box">
+                            </div>
+                        </div>
+                    </div>
+                    <span>{{errormsg}}</span>
+                    <button type="submit"  class="btn waves-effect waves-light" (click)="login()" name="action">Login</button>
+                </form>
+            </div>
+            <div class="card-footer">
+                <a routerLink="/register/request"><p> placement officer? To Register: click here</p></a>
+            </div>      
+            </div>
+        </div>
+    </div>
+</div>

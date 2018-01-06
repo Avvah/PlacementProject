@@ -1,0 +1,40 @@
+.card{
+    padding-left: 20px;
+    padding-right: 20px;
+    
+}
+.card-header{
+    background-color:#337ab7;
+}
+.login{
+    background-color:#337ab7;
+    height: max-content;
+    width: max-content;
+}
+
+#main{
+    background-color: #82B1FF;
+    background: -webkit-linear-gradient(left, rgba(255,0,0,0), rgb(130, 177, 255)); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(right, rgba(255,0,0,0), rgb(130, 177, 255)); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(right, rgba(255,0,0,0), rgb(130, 177, 255)); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(to right, rgba(255,0,0,0), rgb(130, 177, 255)); /* Standard syntax (must be last) */
+}
+
+#text_box{
+     border-radius: 15px 40px 40px 5px;
+    background: #FFFFFF;
+    /*padding: 20px; */
+    width: 250px;
+    /*height: 150px;*/
+}
+
+button{
+    background-color:rgb(2, 119, 189);
+    width: 240px;
+    border-radius: 12px;
+}
+
+img{
+    padding-top:200px;
+    width:700px;
+}

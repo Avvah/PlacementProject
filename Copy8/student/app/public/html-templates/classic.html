@@ -1,0 +1,141 @@
+
+<body id="top">
+	<div id="printable">
+	<div id="cv" class="instaFade" >
+		<div class ="row">
+			<div class="mainDetails">
+				<!--<div class="col-sm-4">
+					<div id="headshot" class="quickFade">
+						<img src="headshot.jpg" alt="Avvah Farhana" style="height:100px; width:100px">
+					</div>
+				</div>-->
+				<div class="col-sm-8">
+					<div id="name">
+						<h1 class="quickFade delayTwo"></h1>
+						<div><b>{{student?.fullName}}</b></div>
+					</div>
+				</div>
+				<div class="col-sm-4">	
+					<div id="contactDetails" class="quickFade delayFour">
+						<ul >
+							<li><b><i>{{student?.email_id}}</i></b></li>
+							<li><b><i>{{student?.phoneNumber}}</i></b></li>
+						</ul>
+					</div>
+				</div>
+				<div class="clear"></div>
+			</div>
+		</div>
+		<div id="mainArea" class="quickFade delayFive">
+			<section>
+				<article>
+					<div class="sectionTitle">
+						<h1>Objective:</h1>
+					</div>
+					<div class="sectionContent">
+						<p>{{student?.objective}}</p>
+					</div>
+				</article>
+				<div class="clear"></div>
+			</section>	
+			
+				<div class="sectionTitle">
+					<h1></h1>
+				</div>
+				<section>
+						<h1 class="sectionTitleForh1">Education Qualification</h1>
+						<table style="width:100%"> 
+							<tr>
+								<th>Degree/Examination</th>
+								<th>Board/University</th>
+								<th>Institute</th>
+								<th>Year Of Passing</th>
+								<th>Marks</th>
+							</tr>
+							<tr>
+								<td>{{student?.degree}}</td>
+								<td>{{student?.board}}</td>
+								<td>{{student?.institute}}</td>
+								<td>{{student?.yearOfPassing}}</td>
+								<td>{{student?.marks}}</td>
+							</tr>
+							<tr>
+								<td>{{student?.degree1}}</td>
+								<td>{{student?.board1}}</td>
+								<td>{{student?.institute1}}</td>
+								<td>{{student?.yearOfPassing1}}</td>
+								<td>{{student?.marks1}}</td>
+							</tr>
+							<tr>
+								<td>{{student?.degree2}}</td>
+								<td>{{student?.board2}}</td>
+								<td>{{student?.institute2}}</td>
+								<td>{{student?.yearOfPassing2}}</td>
+								<td>{{student?.marks2}}</td>
+							</tr>
+						</table>
+						</section>
+						<div>
+							<section>
+					<article>
+						<h1 class="sectionTitleForh1">Training And Certificates</h1>
+						<p>{{student?.training}}</p>
+					</article>
+							</section>
+							<section>
+					<article>
+						<h1 class="sectionTitleForh1">Skills/Competencies:</h1>
+						
+						<p>{{student?.skills}}</p>
+					</article>
+							</section>
+				</div>
+				<div class="clear"></div>
+				
+		<section>
+			<div class="sectionTitle">
+				<h1>Projects</h1>
+			</div>
+			
+			<div class="sectionContent">
+				<article>
+					<p>{{student?.projects}}</p>
+				</article>
+			</div>
+			<div class="clear"></div>
+		</section>
+		
+		
+		<section>
+			<div class="sectionTitle">
+				<h1>Activities</h1>
+			</div>
+			
+			<div class="sectionContent">
+				<article>
+					<p>{{student?.activities}}</p>
+				</article>
+			</div>
+			<div class="clear"></div>
+		</section>
+
+		<section>
+			<div class="sectionTitle">
+				<h1>Hobbies:</h1>
+			</div>
+			
+			<div class="sectionContent">
+				<article>
+					<p>{{student?.hobbies}}</p>
+				</article>
+			</div>
+			<div class="clear"></div>
+		</section>
+		
+
+</div>
+	</div>
+	</div>
+	<button (click)="printDiv(printable);" type="button" class="btn btn-info">Print Resume</button>
+
+</body>

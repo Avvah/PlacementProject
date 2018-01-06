@@ -1,0 +1,43 @@
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-md-12">
+			<div class="card">
+				<!-- <div class="card-header" data-background-color="blue">
+					<h4 class="title">Upcoming Placement Drives</h4>
+					<p class="category">These are the list of upcoming events</p>
+				</div>-->
+				<header>
+					
+				</header>
+				<div class="card-content table-responsive">
+					<table class="table">	
+						<thead class="text-primary" id="table-head">
+							<th col width ="60">Sl.No</th>
+							<th col width ="150">Company Name</th>
+							<th col width ="100">Location</th>
+							<th col width ="70">Cut Off</th>
+							<th col width ="90">Branches</th>
+							<th col width ="90">Date</th>
+							<th col width ="90">Report Time</th>
+							<th col width ="130">Venue</th>
+						</thead>
+						<tbody id="table-content">
+							<tr *ngFor="let companyArray of companyArrays" >
+									<td col width ="60">*</td>
+									
+									<td col width ="150"><a  routerLink="/home/company/add">{{companyArray.name}}</a></td>
+									
+									<td col width ="100">{{companyArray.location}}</td>
+									<td col width ="70">{{companyArray.cutOff}}</td>
+									<td col width ="90">{{companyArray.branch}}</td>
+									<td col width ="90">{{companyArray.date}}</td>
+									<td col width ="90">{{companyArray.time}}</td>
+									<td col width ="130">{{companyArray.venue}}</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

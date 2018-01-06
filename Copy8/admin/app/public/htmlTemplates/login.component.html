@@ -1,0 +1,171 @@
+<body id="main">
+    <div class="container"> 
+      <div class= row></div>
+    <div class="row">
+        <div class="col-sm-9">
+          <img src="app/public/images/pg-logo.png" alt="Logo"/>
+        </div>
+    <!--<div class="card">-->
+       <!-- <div class="card-header">
+           login </div>-->
+           <div class="col-sm-2" style="padding-top:130px;">
+       <div class="card-content">
+       <header >
+            <h2 style="text-align:center;">Login</h2>
+        </header>
+            <form #f="ngForm" ngSubmit="onClickLogin()">
+              <!--<div class="input-field col s12">-->
+                  <div class="form-group">
+                    <!--<div class="row">-->
+                   <input type=text name="userName" [(ngModel)]="user.userName" placeholder="Username" class="form-control" id="text_box">
+                    <!--</div>-->
+                  </div>
+              <!--</div>             -->
+                <!--<div class="input-field col s12">-->
+                   <div class="form-group">
+                       <!--<div class="row">-->
+                        
+                    <input type=password name="password" [(ngModel)]="user.password" placeholder="Password" class="form-control" id="text_box">
+                <!--</div>-->
+                   </div>
+                   <!--</div>-->
+                <span>{{errormsg}}</span>
+                <div class="row" style="text-align:center">
+                  <div class="col-sm-6">
+                <button type="submit"  class="btn waves-effect waves-light" (click)="login()" name="action">Login</button>
+                </div>
+                </div>
+                <div class="row" style="text-align:center">
+                <div style="padding-top:20px; padding-left:80px;">
+                <a style="cursor:pointer; margin-top:30px; white-space: nowrap ;" (click)="goToRecover()"><p>Forgot Password?</p></a>
+                </div>
+                </div>
+            </form>
+        </div>
+          
+        <div class="card-footer" style="cursor:pointer; margin-top:30px; white-space: nowrap ; text-align:center; padding-left:10px;">
+            <p></p>
+            <a (click)="gotoRegisterRequest()"><p>Register here to create your account</p></a>
+        </div>
+
+
+    <!--</div>-->
+    <!--</div>-->
+     </div>
+     
+</div>
+
+<div id ="">
+<div class="modal" id="modal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="false"  data-backdrop="false">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+     
+        <h4 class="modal-title" id="myModalLabel">Register Form</h4>
+      </div>
+      <div class="modal-body">
+        
+          
+         <div class=main>
+            
+            <div class="form-body" style="margin-left:120px">
+                    <form #f="ngForm" (ngSubmit)="onRegister()">
+                        <div class="row">
+                        <div class="col-sm-8">
+                        <div class="form-group">
+                        <label class="control-label">Name</label>
+                        <input type="text" [(ngModel)]="register.name" name="name" class="form-control">
+                        </div>
+                        </div>
+                        
+                        </div>
+
+                        <div class="row">
+
+                        <div class="col-sm-4">
+                        <div class="form-group">
+                            <label class="control-label">Email Id:</label>
+                            <input type="text" [(ngModel)]="register.mail" name="mail" class="form-control">
+                        </div>
+                        </div>
+                        <div class="col-sm-4">
+                        <div class="form-group">
+                        <label>Contact Number:</label>
+                        <input type="text" [(ngModel)]="register.contact" name="contact" class="form-control">
+                        </div>
+                        </div>
+                        </div>
+                        
+                        <div class="row">
+                        <div class="col-sm-4">
+                        <div class="form-group">
+                        <label>City:</label>
+                        <input type="text" [(ngModel)]="register.city" name="city" class="form-control">
+                        </div>
+                        </div>
+                        </div>
+                                               
+                        <div class="row">
+                        <div class="col-sm-4">
+                        <div class="form-group">
+                        <label>Institution:</label>
+                        <input type="text" [(ngModel)]="register.institution" name="institution" class="form-control">
+                        </div>
+                        </div>
+                        </div>
+                        
+                        <div class="row">
+                        <div class="col-sm-4">
+                        <div class="form-group">
+                        <label>Any Questions?</label>
+                        <input type="text-area" [(ngModel)]="register.quest" name="quest" class="form-control">
+                        </div>
+                        </div>
+                        </div>
+                        
+                        
+                    </form>
+            </div>
+        </div>
+          
+          
+      </div>
+      <div class="modal-footer">
+      <button class="btn btn-default" type="submit" (click)="submit()">Send Request</button>
+        <button type="button" class="btn btn-default" data-dismiss="modal">close</button>
+        
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+</div>
+
+
+
+    
+</div>
+<!-- Modal -->
+<div id =modal1>
+<div class="modal " id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true"  data-backdrop="false">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+     
+        <h4 class="modal-title" id="myModalLabel">OOPS!!</h4>
+      </div>
+      <div class="modal-body">
+        
+          
+          oops..! it seems you entered wrong username or password
+          
+          
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">OK</button>
+        
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+</div>
+</body>

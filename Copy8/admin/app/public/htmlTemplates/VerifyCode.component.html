@@ -1,0 +1,20 @@
+<div>
+
+    <h3 style="text-align:center;" >Enter The Verification Code Sent to your Phone</h3>
+    <form #f="ngForm" ngSubmit="onVerify()">
+        <div class="form-group">
+            <div class="row" style="margin-top:150px;">
+                <div class="col-sm-5"></div>
+                <div class="col-sm-2">
+            <input type=text name="vcode" [(ngModel)]="vcode.vcode" class="form-control" id="text_box" #passid>
+                </div>
+            </div>
+        </div>
+    </form>
+    <div class="row">
+                <div class="col-sm-6"></div>
+                <div class="col-sm-2">
+    <button type="submit" (click)="onVerify(passid.value)"> Verify </button>
+     </div>
+            </div>
+</div>

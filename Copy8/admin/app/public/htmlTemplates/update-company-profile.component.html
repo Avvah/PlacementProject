@@ -1,0 +1,200 @@
+<div class="container-fluid">
+	<div class="row">
+		<toaster-container [toasterconfig]="toasterconfig">
+        </toaster-container>
+	    <div class="col-md-8">
+	        <div class="card">
+	            <div class="card-header" data-background-color="blue">
+	                <h4 class="title">Add Company Profile</h4>
+					<p class="category">Fill all the data</p>
+                </div>
+                <div class="card-content">
+                    <form #f="ngForm" (ngSubmit)="onSubmitTemplateBased()">								
+	                    <div class="row">
+	                        <div class="col-md-5">
+								<div class="form-group label-floating">
+									
+                                    <label class="control-label">Company Name</label>
+									<input type="text" class="form-control" value="{{company?.name}}"
+										[(ngModel)]="comp.name" name = "name" required>
+											
+                                </div>
+	                        </div>
+                        </div>
+                        <div class="row">
+	                        <div class="col-md-6">
+								<div class="form-group label-floating">
+									
+                                    <label class="control-label">Company Location</label>
+									<input type="text" value="{{company?.location}}" class="form-control"
+										[(ngModel)]="comp.location" name = "location" required>
+											
+                                </div>
+	                        </div>
+                        </div>
+                        <div class="row">
+	                        <div class="col-md-3">
+								<div class="form-group label-floating">
+												
+                                    <label class="control-label">Cut Off(10th)</label>
+									<input type="text" value="{{company?.cutOffS}}" class="form-control"
+										[(ngModel)]="comp.cutOffS" name = "cutOffS" list="tenth" required>
+									<datalist id="tenth">
+										<option>No Cut Off</option>
+										<option>60%</option>
+										<option>65%</option>
+										<option>70%</option>
+										<option>75%</option>
+										<option>80%</option>
+										<option>85%</option>
+									</datalist>
+											
+                                </div>
+							</div>
+						    <div class="col-md-3">
+								<div class="form-group label-floating">
+											
+									<label class="control-label">Cut Off(12th)</label>
+									<input type="text" value="{{company?.cutOffP}}" class="form-control"
+										[(ngModel)]="comp.cutOffP" name = "cutOffP" list="twelveth" required >
+									<datalist id="twelveth">
+										<option>No Cut Off</option>
+										<option>60%</option>
+										<option>65%</option>
+										<option>70%</option>
+										<option>75%</option>
+										<option>80%</option>
+										<option>85%</option>	
+									</datalist>
+											
+                                </div>
+							</div>
+							<div class="col-md-3">
+								<div class="form-group label-floating">											
+												
+                                    <label class="control-label">Cut Off(degree)</label>
+									<input type="text" value="{{company?.cutOffD}}" class="form-control"
+										[(ngModel)]="comp.cutOffD" name = "cutOffD" list="college" required>
+									<datalist id="college">
+										<option>No Cut Off</option>
+										<option>60%</option>
+										<option>65%</option>
+										<option>70%</option>
+									</datalist>
+
+								</div>
+                            </div>
+							<div class="col-md-3">
+								<div class="form-group label-floating">											
+												
+                                    <label class="control-label">Cut Off(PG-Optional)</label>
+									<input type="text" class="form-control"
+										[(ngModel)]="comp.cutOffPg" name = "cutOffPg" list="pg">
+									<datalist id="pg">
+										<option>No Cut Off</option>
+										<option>60%</option>
+										<option>65%</option>
+										<option>70%</option>
+									</datalist>
+
+								</div>
+                            </div>
+						</div>
+						<div class="row">
+							<div class="col-md-12">
+								<div class="form-group label-floating">
+									
+                                    <label class="control-label">Eligible Branches</label>
+									
+									<input type="text" value="{{company?.branch}}" class="form-control" 
+										[(ngModel)]="comp.branch" name = "branch" list="branch" >
+									<datalist id="branch" multiple>
+										<option>All/Any</option>
+										<option>Computer Science</option>
+										<option>Information Science</option>
+										<option>Mechanical</option>
+										<option>Electrical</option>
+										<option>Electronics And Communication</option>
+										<option>Civil</option>
+										<option>Bio Technology</option>
+										<option>Tele Communication</option>
+										<option>Architecture</option>
+									</datalist>
+
+                                </div>
+	                        </div>
+                        </div>
+	                    <div class="row">
+							<div class="col-md-12">
+                            <div class="form-group label-floating">
+                                            
+                                <label class="control-label">Round Details</label>
+                                <input type="text" value="{{company?.roundDetails}}" class="form-control"
+									[(ngModel)]="comp.roundDetails" name = "roundDetails" >
+                                        
+                            </div>
+							</div>
+                        </div>
+                        <div class="row">
+							<div class="col-md-12">
+                            <div class="form-group label-floating">
+                                            
+                                <label class="control-label">Required Skills</label>
+                                <input type="text" value="{{company?.skills}}" class="form-control"
+									[(ngModel)]="comp.skills" name = "skills">
+                                        
+                            </div>
+							</div>
+                        </div>
+						<div class="row">
+                            <div class="col-md-4">
+                                <div class="form-group label-floating">
+                                    <label class="control-label">Package</label>
+                                                
+                                    <input type="text" value="{{company?.package}}" class="form-control"
+										[(ngModel)]="comp.package" name = "package" >
+                                            
+                                </div>
+                            </div>
+                        </div>
+	                    <div class="row">
+	                        <div class="col-md-5">
+								<div class="form-group label-floating">
+												
+                                    <label class="control-label">Date</label>
+									<input type="text" value="{{company?.date}}" class="form-control" 
+										[(ngModel)]="comp.date" name = "date" >
+											
+                                </div>
+	                        </div>
+	                        <div class="col-md-4">
+							    <div class="form-group label-floating">
+												
+                                    <label class="control-label">Time</label>
+									<input type="text" value="{{company?.time}}" class="form-control" 
+										[(ngModel)]="comp.time" name = "time" >
+											
+                                </div>
+	                        </div>
+	                    </div>
+	                    <div class="row">
+	                        <div class="col-md-12">
+								<div class="form-group label-floating">
+									
+                                    <label class="control-label">Venue</label>
+									<input type="text" value="{{company?.venue}}" class="form-control"
+										[(ngModel)]="comp.venue" name = "venue"  >
+								</div>
+	                        </div>
+	                    </div>
+						
+                        <button type="submit" class="btn btn-info invite-btn pull-right">Update Company</button>
+                        
+                        <div class="clearfix"></div>
+	                </form>
+				</div>
+			</div>
+	    </div>
+	</div>
+	
+</div>

@@ -1,0 +1,44 @@
+<div class="container-fluid">
+	<div class="row">
+	    <div class="col-md-12">
+	        <div class="card">
+	            <div class="card-header">
+                    <div id="search">
+                        <div class="form-group pull-right">
+                        
+                            <input type="text" placeholder="search" class="form-control" style="background-color:#fff"
+                                [(ngModel)]="args" id="search">
+                    
+                        </div>
+                    </div>
+	                
+                    <h4 class="title">Students</h4>
+                    <p class="category">This is a list of students registered on placement portal</p>
+	                
+                </div>
+				<div class="clearfix">
+                </div>
+	            <div class="card-content table-responsive">
+					<div class="tesco" *ngFor=" let student of (students | searchPipe:args)">
+						<a  routerLink="/home/students/view/{{student._id}}">
+							<div class="col-md-4">
+										
+                                <img class="img-responsive img-circle"
+                                     src="../app/public/assets/img/faces/marc.jpg" alt="Paris">
+									
+                            </div>
+							<div class="col-md-8">
+										
+                                <p style="padding-left:10px;" title="USN">{{student?.usn}}</p>
+								<p style="padding-left:10px;" title="Name">{{student?.fullName}}</p>
+								<p style="padding-left:10px;" title="Coarse">B.E/{{student?.branch}}</p>
+									
+                            </div>
+						</a>
+					</div>
+				</div>
+	        </div>
+		</div>
+	</div>
+</div>  
+						 	

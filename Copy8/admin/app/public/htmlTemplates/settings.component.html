@@ -1,0 +1,49 @@
+<div class="container-fluid">
+    <form>
+        <div class="card">
+            <div class="card-header" data-background-color="blue">
+                <h4 class="title">Settings</h4>
+                <p class="category">Edit Settings</p>
+            </div>
+            <div class="card-content">
+                <button class="btn btn-info invite-btn" data-toggle="collapse" data-target="#demo">Change Password</button>
+                <div id="demo" class="collapse">
+                    <form #f="ngForm" (ngSubmit)="onSubmitTemplateBased()">
+                        <br>
+                        <div class="row">
+                            <div class="col-sm-2"></div>
+                            <div class="col-sm-4">
+                                <label>Current Password</label>
+                                <input type="text"  class="form-control"
+                                    [(ngModel)]="pass.currentPassword" name="currentPassword"
+                                    id="currentPassword">
+                            </div>
+                            <p id="currentPasswordMatch" style="padding-top:35px;"></p>
+                        </div>
+                        <br>
+                        <div class="row">
+                            <div class="col-sm-2"></div>
+                            <div class="col-sm-4">
+                                <label>New Password</label>
+                                <input type="text" class="form-control"
+                                    [(ngModel)]="pass.password" name="password" id="newPassword" >
+                            </div>
+                        </div>
+                        <br>
+                        <div class="row">
+                            <div class="col-sm-2"></div>
+                            <div class="col-sm-4">
+                                <label>Re-type New Password</label>
+                                <input type="text" class="form-control"
+                                    [(ngModel)]="pass.confirmPassword" name="confirmPassword" id="confirmPassword">
+                            </div>
+                        </div>
+                        <br>
+                        <p id="matchPassword" ></p>
+                        <button type="submit">Submit</button>
+                    </form>
+                </div>
+            </div>
+        </div> 
+    </form>
+</div>

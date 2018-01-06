@@ -1,0 +1,25 @@
+.image-upload > input
+{
+    display: none;
+}
+
+#imageButton{
+    background: red;
+    width: 92px
+}
+
+/*input::-webkit-input-placeholder {
+color: black !important;
+}
+ 
+input:-moz-placeholder { /* Firefox 18- */
+/*color: black !important;  
+}
+ 
+input::-moz-placeholder {  /* Firefox 19+ */
+/*color: black !important;  
+}
+ 
+input:-ms-input-placeholder {  
+color: black !important;  
+}*/

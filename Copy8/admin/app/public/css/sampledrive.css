@@ -1,0 +1,32 @@
+.tesco{
+    padding: 5px;
+    display: inline-block;
+    border:0px;
+    opacity: 1;
+    background-color:  #607D8B;
+    margin: 10px;
+    position: relative;
+    width:250px;
+    height: 250px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1), 0 6px 10px 0 rgba(0, 0, 0, 0.09);
+}
+.card-header{
+    background-color: #1893AB;
+}
+
+p{
+    padding:0px 5px 0px;
+    color: white;
+    text-align: center;
+    font-weight:bold;
+    font-family: 'Lato';
+    -webkit-font-smoothing: antialiased;
+}
+
+#foot{
+	clear:both;
+
+	border-top:2px solid green;
+}
+
+

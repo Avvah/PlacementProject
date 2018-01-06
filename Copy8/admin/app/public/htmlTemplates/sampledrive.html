@@ -1,0 +1,98 @@
+<div class="container-fluid">
+	    <div class="row">
+	        <div class="col-md-12">
+	            <div class="card">
+	                <div class="card-header" data-background-color="gray">
+	                    <h4 class="title">Upcoming Placement Drives</h4>
+	                    <!--<p class="category">These are the list of upcoming events</p>-->
+	                </div>
+					<header>
+						
+					</header>
+	                <div class="card-content table-responsive">
+	                    <div class = "tesco" *ngFor="let companyArray of companyArrays" >
+                            
+                            <div class="col-sm-12">
+								<header>		
+                                <p style="font-size:25px" title="Company name">{{companyArray?.name}}</p>
+                                </header>
+								<p style="font-size:15px" title="Drive Date">{{companyArray?.date}}</p>
+								<p style="font-size:20px" title="Job Location">{{companyArray?.venue}}</p>
+                                
+								
+                                
+                                <div class="w3-xxxlarge">
+                                    <a  routerLink="/home/company/add/{{companyArray._id}}" style="position:absolute;right:140px; color:#fff; top:210px;">
+                                    <i class="material-icons" title="Edit Drive Details">edit</i>
+                                    </a>
+                                </div>
+								
+                                <a href="" data-toggle="modal" data-target="#myModal">
+                                 <div class="w3-xxxlarge" >
+                                    <a style="position:absolute;right:70px; color:#fff; top:210px">
+                                    <i class="material-icons" title="Share">share</i>
+                                    </a>
+                                </div>
+                                </a>
+
+                                <div class="w3-xxxlarge">
+                                    <a (click)="deleteDrive(companyArray._id)" style="position:absolute;right:0px; color:#fff; top:210px; cursor: pointer;">
+                                    <i class="material-icons" title="Delete">delete</i>
+                                    </a>
+                                
+								</div>
+                                
+                                
+                            </div>
+                            
+                        </div>
+	                </div>
+	            </div>
+	        </div>
+        </div>
+
+        <div id="myModal" class="modal fade" role="dialog" data-backdrop="false">
+  		<div class="modal-dialog">
+			
+      		<div class="modal-content">
+        		<div class="modal-header" background-color="blue">
+          									
+					<h4 class="modal-title">Invite Other Colleges</h4>
+				
+                </div>
+                <form name = test>
+					<div class="modal-body">
+						<div class="form-group label-floating">
+
+							<label class="control-label">Email</label>
+									<input type="email" class="form-control"
+										 name = "email" list="email" multiple>
+									<datalist id="email">
+										<option>Shamnas@rubixoft.com</option>
+										<option>me@fromme.com</option>
+										<option>you@you.com</option>
+										<option>someone@someone.com</option>
+									</datalist>				
+                          <!--  <label class="control-label">Email Address</label>
+          					<input type="email" class="form-control"
+								name= "email" [(ngModel)]="email" id="email" >
+
+                            <textarea [(ngModel)]="extraMessage" placeholder="Message(Optional)" rows="4"></textarea>-->
+												 
+                        </div>
+                    </div>
+				</form>
+				<div class="row">
+					<div class="modal-footer">
+						<div class ="col-md-3">
+							<button type="button" class="btn btn-info invite-btn" >Send</button>
+						</div>
+						<div class ="col-md-9">
+        					<button type="button" class="btn btn-info invite-btn" data-dismiss="modal">Close</button>
+						</div>
+        			</div>
+				</div>
+			</div>
+		</div>
+	</div> 
+    </div>

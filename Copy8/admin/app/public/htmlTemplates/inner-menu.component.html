@@ -1,0 +1,8 @@
+<ul class="nav">
+    <li class="{{menuitem.status}}" *ngFor="let menuitem of menuitems">
+        <a routerLink="/{{menuitem.url}}">
+            <i class="material-icons">{{menuitem.ico}}</i>
+            <p>{{menuitem.name}}</p>
+        </a>
+    </li>
+</ul>  

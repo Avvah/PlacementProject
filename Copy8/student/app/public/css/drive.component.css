@@ -1,0 +1,25 @@
+.table{
+    
+}
+.text-primary{
+    
+    background-color:#1893AB;
+    color: #ffffff;
+}
+#table-head th{
+        padding:8px;
+        text-align:center;
+
+}
+#table-content td{
+    text-align: center;
+}
+tr:nth-child(even){background-color:#e0f2f1}
+
+header{
+    padding-left:10px;
+    padding-top: 10px;
+}
+.btn btn-info{
+    color: #1893AB;
+}
